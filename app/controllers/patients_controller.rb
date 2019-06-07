@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = current_user.patients
   end
 
   # GET /patients/1
@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
 
   # GET /patients/new
   def new
-    @patient = Patient.new
+    @patient = current_user.patients.new
   end
 
   # GET /patients/1/edit
@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.json
   def create
-    @patient = Patient.new(patient_params)
+    @patient = current_user.patients.new(patient_params)
 
     respond_to do |format|
       if @patient.save
@@ -64,7 +64,7 @@ class PatientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
-      @patient = Patient.find(params[:id])
+      @patient = current_user.patients.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
