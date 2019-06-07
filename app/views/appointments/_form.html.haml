@@ -1,0 +1,29 @@
+= form_with(model: appointment, local: true) do |form|
+  - if appointment.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(appointment.errors.count, "error")
+        prohibited this appointment from being saved:
+      %ul
+        - appointment.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :description
+    = form.text_area :description
+  .field
+    = form.label :booked_time
+    = form.datetime_select :booked_time
+  .field
+    = form.label :address
+    = form.text_field :address
+  .field
+    = form.label :notes
+    = form.text_area :notes
+  .field
+    = form.label :user_id
+    = form.number_field :user_id
+  .actions
+    = form.submit
