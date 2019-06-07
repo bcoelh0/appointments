@@ -46,11 +46,8 @@
 
 
 ## To do
-- setup authentication and registration
-- organise routes according to data schema
-- have all basic CRUD pages working
 - install bootstrap
 - make UI look half acceptable
-- create dashboard view
+- create dashboard view/ calendar
 ...
 - implement cache
