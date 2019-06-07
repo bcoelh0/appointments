@@ -9,8 +9,10 @@
 - office_address
 - phone_number
 - (add other options)
----
+
 - has_many patients
+
+---
 
 ### Patient
 - name
@@ -19,9 +21,11 @@
 - address
 - notes
 - user_id
----
+
 - belongs_to user
 - has_many appointments
+
+---
 
 ### Appointment
 - title
@@ -30,5 +34,5 @@
 - address
 - notes
 - patient_id
----
+
 - belongs_to patient
