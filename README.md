@@ -10,7 +10,7 @@
 - phone_number
 - (add other options)
 
-- has_many patients
+- *has_many patients*
 
 ---
 
@@ -22,8 +22,8 @@
 - notes
 - user_id
 
-- belongs_to user
-- has_many appointments
+- *belongs_to user*
+- *has_many appointments*
 
 ---
 
@@ -35,4 +35,4 @@
 - notes
 - patient_id
 
-- belongs_to patient
+- *belongs_to patient*
