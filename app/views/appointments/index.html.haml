@@ -1,26 +1,23 @@
-%p#notice= notice
-%h1 Appointments
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Booked time
-      %th Address
-      %th Notes
-      %th User
-      %th{:colspan => "3"}
-  %tbody
-    - @appointments.each do |appointment|
-      %tr
-        %td= appointment.title
-        %td= appointment.description
-        %td= appointment.booked_time
-        %td= appointment.address
-        %td= appointment.notes
-        %td= appointment.user_id
-        %td= link_to 'Show', appointment
-        %td= link_to 'Edit', edit_appointment_path(appointment)
-        %td= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Appointment', new_appointment_path
+.container
+  .row
+    .col-sm-10.offset-sm-1.mt-5
+      %p#notice= notice
+      %h1 Appointments
+      %table.table.mt-5
+        %thead
+          %tr
+            %th Title
+            %th Patient
+            %th Booked time
+            %th{ colspan: "3" }
+        %tbody
+          - @appointments.each do |appointment|
+            %tr
+              %td= appointment.title
+              %td= appointment.patients.first.present? ? appointment.patients.first.name : "No patients"
+              %td= formated_date appointment.booked_time
+              %td= link_to "Show", appointment
+              %td= link_to "Edit", edit_appointment_path(appointment)
+              %td= link_to "Destroy", appointment, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"
+      %br/
+      = link_to "New Appointment", new_appointment_path, class: "btn btn-info"

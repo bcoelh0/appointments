@@ -7,26 +7,20 @@
       %ul
         - patient.errors.full_messages.each do |message|
           %li= message
-  .field
+  .field.form-group
     = form.label :name
-    = form.text_field :name
-  .field
+    = form.text_field :name, class: "form-control"
+  .field.form-group
     = form.label :email
-    = form.text_field :email
-  .field
+    = form.text_field :email, class: "form-control"
+  .field.form-group
     = form.label :phone_number
-    = form.text_field :phone_number
-  .field
+    = form.text_field :phone_number, class: "form-control"
+  .field.form-group
     = form.label :address
-    = form.text_field :address
-  .field
+    = form.text_field :address, class: "form-control"
+  .field.form-group
     = form.label :notes
-    = form.text_area :notes
-  .field
-    = form.label :appointment_id
-    = form.number_field :appointment_id
-  .field
-    = form.label :user_id
-    = form.number_field :user_id
-  .actions
-    = form.submit
+    = form.text_area :notes, class: "form-control"
+  .actions.form-group
+    = form.submit class: "btn btn-success"

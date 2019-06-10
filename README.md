@@ -46,8 +46,8 @@
 
 
 ## To do
-- install bootstrap
-- make UI look half acceptable
+- fix patient/appointment relationship --> https://medium.com/@pk60905/many-to-many-relationship-in-rails-cf86e12db8b0
+- add cocoon form on appointments, to add patients to appointments
 - create dashboard view/ calendar
 ...
-- implement cache
+- implement cache + indexes

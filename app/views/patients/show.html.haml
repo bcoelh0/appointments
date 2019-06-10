@@ -1,25 +1,28 @@
-%p#notice= notice
-%p
-  %strong Name:
-  = @patient.name
-%p
-  %strong Email:
-  = @patient.email
-%p
-  %strong Phone number:
-  = @patient.phone_number
-%p
-  %strong Address:
-  = @patient.address
-%p
-  %strong Notes:
-  = @patient.notes
-%p
-  %strong Appointment:
-  = @patient.appointment_id
-%p
-  %strong User:
-  = @patient.user_id
-= link_to 'Edit', edit_patient_path(@patient)
-|
-= link_to 'Back', patients_path
+.container
+  .row
+    .col-sm-8.offset-sm-2.mt-5
+      %p#notice= notice
+      %p
+        %strong Name:
+        = @patient.name
+      %p
+        %strong Email:
+        = @patient.email
+      %p
+        %strong Phone number:
+        = @patient.phone_number
+      %p
+        %strong Address:
+        = @patient.address
+      %p
+        %strong Notes:
+        = @patient.notes
+      %p
+        %strong Appointment:
+        = @patient.appointment_id
+      %p
+        %strong User:
+        = @patient.user_id
+      = link_to 'Edit', edit_patient_path(@patient)
+      |
+      = link_to 'Back', patients_path

@@ -7,23 +7,25 @@
       %ul
         - appointment.errors.full_messages.each do |message|
           %li= message
-  .field
+
+  .field.form-group
     = form.label :title
-    = form.text_field :title
-  .field
+    = form.text_field :title, class: "form-control"
+  .field.form-group
     = form.label :description
-    = form.text_area :description
-  .field
+    = form.text_area :description, class: "form-control"
+  .field.form-group
     = form.label :booked_time
-    = form.datetime_select :booked_time
-  .field
+    =# form.datetime_select :booked_time, class: "form-control"
+    = form.text_field :booked_time, class: "form-control", id: "datetimepicker"
+  .field.form-group
     = form.label :address
-    = form.text_field :address
-  .field
+    = form.text_field :address, class: "form-control"
+  .field.form-group
     = form.label :notes
-    = form.text_area :notes
-  .field
-    = form.label :user_id
-    = form.number_field :user_id
-  .actions
-    = form.submit
+    = form.text_area :notes, class: "form-control"
+  .actions.form-group
+    = form.submit class: "btn btn-success"
+
+:javascript
+  $('#datetimepicker').datetimepicker();

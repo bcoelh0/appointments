@@ -1,28 +1,25 @@
-%p#notice= notice
-%h1 Patients
-%table
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Phone number
-      %th Address
-      %th Notes
-      %th Appointment
-      %th User
-      %th{:colspan => "3"}
-  %tbody
-    - @patients.each do |patient|
-      %tr
-        %td= patient.name
-        %td= patient.email
-        %td= patient.phone_number
-        %td= patient.address
-        %td= patient.notes
-        %td= patient.appointment_id
-        %td= patient.user_id
-        %td= link_to 'Show', patient
-        %td= link_to 'Edit', edit_patient_path(patient)
-        %td= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Patient', new_patient_path
+.container
+  .row
+    .col-sm-10.offset-sm-1.mt-5
+      %p#notice= notice
+
+      %h1 Patients
+
+      %table.table.mt-5
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Phone number
+            %th{:colspan => "3"}
+        %tbody
+          - @patients.each do |patient|
+            %tr
+              %td= patient.name
+              %td= patient.email
+              %td= patient.phone_number
+              %td= link_to 'Show', patient
+              %td= link_to 'Edit', edit_patient_path(patient)
+              %td= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger"
+      %br/
+      = link_to 'New Patient', new_patient_path, class: "btn btn-info"
