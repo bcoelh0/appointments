@@ -1,10 +1,9 @@
 .container
   .row
     .col-sm-10.offset-sm-1.mt-5
-      %p#notice= notice
+      = alert_box("success", notice)
 
       %h1 Patients
-
       %table.table.mt-5
         %thead
           %tr

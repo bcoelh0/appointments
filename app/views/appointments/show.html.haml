@@ -1,7 +1,8 @@
 .container
   .row
     .col-sm-8.offset-sm-2.mt-5
-      %p#notice= notice
+      = alert_box("success", notice)
+
       %p
         %strong Title:
         = @appointment.title
