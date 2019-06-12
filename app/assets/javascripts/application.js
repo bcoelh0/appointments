@@ -18,4 +18,5 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require tempusdominus-bootstrap-4
+//= require cocoon
 //= require_tree .

@@ -46,8 +46,8 @@
 
 
 ## To do
-- fix patient/appointment relationship --> https://medium.com/@pk60905/many-to-many-relationship-in-rails-cf86e12db8b0
-- add cocoon form on appointments, to add patients to appointments
+- fix alerts and error messages display. Add alert boxes.
 - create dashboard view/ calendar
+- fix booked_time interface (datetimepicker)
 ...
 - implement cache + indexes

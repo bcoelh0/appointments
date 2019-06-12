@@ -24,8 +24,18 @@
   .field.form-group
     = form.label :notes
     = form.text_area :notes, class: "form-control"
-  .actions.form-group
+
+  %h3 Patients
+  #patients
+    = form.fields_for :patients do |patient|
+      = render "patient_fields", f: patient
+    .links
+      = link_to_add_association "add patient", form, :patients
+
+  .actions.form-group.mt-5
     = form.submit class: "btn btn-success"
+
+
 
 :javascript
   $('#datetimepicker').datetimepicker();

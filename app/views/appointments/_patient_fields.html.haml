@@ -1,0 +1,7 @@
+.nested-fields
+  .field
+    = f.label :patient
+    %br
+    = f.select(:id, @patients.collect { |p| [ p.name, p.id ] }, { include_blank: false }, { class: "form-control" })
+
+  = link_to_remove_association "remove patient", f

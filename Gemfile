@@ -28,6 +28,7 @@ gem 'devise'
 gem 'haml-rails', '~> 2.0'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'cocoon'
 
 gem 'momentjs-rails'
 gem 'bootstrap4-datetime-picker-rails'
