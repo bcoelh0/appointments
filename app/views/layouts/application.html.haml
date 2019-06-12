@@ -8,4 +8,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container
+        %a.navbar-brand{:href => "#"} Appointments
+        - if user_signed_in?
+          #navbarSupportedContent.collapse.navbar-collapse
+            %ul.navbar-nav.mr-auto
+              = nav_link("Home", root_path)
+              = nav_link("Appointments", appointments_path)
+              = nav_link("Patients", patients_path)
+
     = yield

@@ -46,7 +46,6 @@
 
 
 ## To do
-- add navbar
 - fix alerts and error messages display. Add alert boxes.
 - create dashboard view/ calendar
 
