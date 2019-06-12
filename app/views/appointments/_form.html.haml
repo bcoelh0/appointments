@@ -16,8 +16,8 @@
     = form.text_area :description, class: "form-control"
   .field.form-group
     = form.label :booked_time
-    =# form.datetime_select :booked_time, class: "form-control"
-    = form.text_field :booked_time, class: "form-control", id: "datetimepicker"
+    #datetimepicker.input-group.date{ data: { target_input: "nearest" } }
+      = form.text_field :booked_time, class: "form-control", data: { target: "#datetimepicker", toggle: "datetimepicker" }
   .field.form-group
     = form.label :address
     = form.text_field :address, class: "form-control"
@@ -36,6 +36,9 @@
     = form.submit class: "btn btn-success"
 
 
-
 :javascript
-  $('#datetimepicker').datetimepicker();
+  $(function () {
+    $('#datetimepicker').datetimepicker({
+      format: "YYYY-MM-DD HH:mm"
+    });
+  });

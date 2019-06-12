@@ -30,6 +30,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'cocoon'
 
+gem 'font-awesome-rails'
 gem 'momentjs-rails'
 gem 'bootstrap4-datetime-picker-rails'
 

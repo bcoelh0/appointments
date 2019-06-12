@@ -17,6 +17,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require moment
-//= require tempusdominus-bootstrap-4
+//= require tempusdominus-bootstrap-4.js
 //= require cocoon
 //= require_tree .

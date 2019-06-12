@@ -30,6 +30,8 @@ class AppointmentsController < ApplicationController
     @appointment = current_user.appointments.new(just_appointment_params)
     set_appointments_patients
 
+    #byebug
+
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
