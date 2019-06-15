@@ -33,6 +33,8 @@ gem 'cocoon'
 gem 'font-awesome-rails'
 gem 'momentjs-rails'
 gem 'bootstrap4-datetime-picker-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

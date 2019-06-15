@@ -46,8 +46,7 @@
 
 
 ## To do
-- fix alerts and error messages display. Add alert boxes.
 - create dashboard view/ calendar
-
+- setup mailers
 ...
 - implement cache + indexes

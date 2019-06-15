@@ -1,11 +1,17 @@
 class AppointmentsController < ApplicationController
   include ApplicationHelper
+  include AppointmentsHelper
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments
   # GET /appointments.json
   def index
     @appointments = current_user.appointments.order "booked_time"
+  end
+
+  def index_for_calendar
+    # build_calendar_data --> AppointmentsHelper method
+    render json: build_calendar_data, status: 200
   end
 
   # GET /appointments/1

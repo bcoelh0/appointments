@@ -19,4 +19,26 @@
 //= require moment
 //= require tempusdominus-bootstrap-4.js
 //= require cocoon
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/locale-all
 //= require_tree .
+
+$(function(){
+  function eventCalendar() {
+    return $('#calendar').fullCalendar({
+      events: '/appointments/calendar.json',
+      defaultView: 'agendaWeek',
+      allDaySlot: false,
+      height: 650
+    });
+  };
+
+  function clearCalendar() {
+    $('#calendar').html('');
+  };
+
+  $(document).on('turbolinks:load', eventCalendar);
+  $(document).on('turbolinks:before-cache', clearCalendar);
+  eventCalendar();
+});
