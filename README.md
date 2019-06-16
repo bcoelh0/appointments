@@ -46,7 +46,9 @@
 
 
 ## To do
-- create dashboard view/ calendar
 - setup mailers
+- make dashboard look better
+- create "landing page" for unlogged users
+
 ...
 - implement cache + indexes

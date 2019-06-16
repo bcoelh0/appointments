@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
     @appointments = current_user.appointments.order "booked_time"
   end
 
+  # endpoint that feeds fullcalendar
   def index_for_calendar
     # build_calendar_data --> AppointmentsHelper method
     render json: build_calendar_data, status: 200

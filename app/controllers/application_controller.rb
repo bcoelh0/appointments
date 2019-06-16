@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   # devise method monkeypatch to redirect users to the correct path after sign in
   def after_sign_in_path_for(resource)
-  	stored_location_for(resource) || appointments_path
+  	stored_location_for(resource) || dashboard_path
   end
 end
