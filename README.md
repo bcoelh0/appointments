@@ -47,6 +47,10 @@
 
 ## To do
 - setup mailers
+  - when appointment is created:
+    1. send email immediately to patients
+    2. send email 24 hours before booked_time
+
 - make dashboard look better
 - create "landing page" for unlogged users
 

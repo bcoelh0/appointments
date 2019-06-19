@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Hi #{@patient.name}!
+    %p
+      You have a booked appointment!
+      %br/
+      When: #{@appointment.booked_time}
+      %br/
+      Where: #{@appointment.address}
+
+    %p Thanks you and have a great day!

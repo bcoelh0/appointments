@@ -37,10 +37,9 @@ class AppointmentsController < ApplicationController
     @appointment = current_user.appointments.new(just_appointment_params)
     set_appointments_patients
 
-    #byebug
-
     respond_to do |format|
       if @appointment.save
+        send_appointment_emails!
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @appointment }
       else
@@ -98,6 +97,16 @@ class AppointmentsController < ApplicationController
       @appointment.patients = []
       just_patient_params.each do |p|
         @appointment.patients << current_user.patients.find(p[:id]) if p[:_destroy] == "false"
+      end
+    end
+
+    def send_appointment_emails!
+      @appointment.patients.each do |patient|
+        # send email now!
+        MailerWorker.perform_async(@appointment, patient)
+        # send email 24 hours before appointment
+        run_at = @appointment.booked_time - 24.hours
+        MailerWorker.perform_at(run_at, @appointment, patient)
       end
     end
 end
