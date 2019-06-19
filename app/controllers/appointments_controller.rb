@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments = current_user.appointments.order "booked_time"
+    @appointments = current_user.appointments.order("booked_time").includes(:patients)
   end
 
   # endpoint that feeds fullcalendar

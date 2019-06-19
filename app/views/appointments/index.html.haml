@@ -15,7 +15,7 @@
           - @appointments.each do |appointment|
             %tr
               %td= appointment.title
-              %td= appointment.patients.first.present? ? appointment.patients.first.name : "No patients"
+              %td= patient_name_display appointment.patients.first
               %td= formated_date appointment.booked_time
               %td= link_to "Show", appointment
               %td= link_to "Edit", edit_appointment_path(appointment)

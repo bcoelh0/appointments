@@ -12,4 +12,12 @@ module AppointmentsHelper
     end
     appointments_for_calendar
   end
+
+  def patient_name_display(patient)
+    if patient.present?
+      patient.name
+    else
+      content_tag(:i, "No patients")
+    end
+  end
 end
